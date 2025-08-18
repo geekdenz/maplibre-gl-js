@@ -1,5 +1,6 @@
-let supportsGeolocation;
+export default {checkGeolocationSupport};
 
+let supportsGeolocation;
 export async function checkGeolocationSupport(forceRecalculation = false): Promise<boolean> {
     if (supportsGeolocation !== undefined && !forceRecalculation) {
         return supportsGeolocation;
@@ -20,4 +21,4 @@ export async function checkGeolocationSupport(forceRecalculation = false): Promi
         supportsGeolocation = !!window.navigator.geolocation;
     }
     return supportsGeolocation;
-}
+};
